@@ -2443,7 +2443,7 @@ $as_echo "no" >&6; }
 fi
 
 
-if test -z "$BASH"; then
+if test -z "$SHELL"; then
    as_fn_error $? "bash not found" "$LINENO" 5
 fi
 

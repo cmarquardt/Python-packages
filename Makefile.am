@@ -25,7 +25,7 @@ EXTRA_DIST = python-packages-install.sh python-packages-update.sh
 # ---------------------
 
 install-packages:
-	$(BASH) python-packages-install.sh
+	$(SHELL) python-packages-install.sh
 
 # 6. Build update script
 # ----------------------

@@ -15,7 +15,7 @@ AC_CANONICAL_HOST
 # ---------------------
 
 AC_PATH_PROG(SHELL, bash)
-if test -z "$BASH"; then
+if test -z "$SHELL"; then
    AC_MSG_ERROR([bash not found])
 fi
 
