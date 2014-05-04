@@ -28,9 +28,6 @@ pip install --upgrade virtualenv
 pip install --upgrade virtualenv-clone
 pip install --upgrade virtualenvwrapper
 
-pip install --upgrade pyparsing
-pip install --upgrade python-dateutil
-
 pip install --upgrade cython
 pip install --upgrade Zconfig
 pip install --upgrade nose

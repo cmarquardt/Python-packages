@@ -28,9 +28,6 @@ pip install virtualenv
 pip install virtualenv-clone
 pip install virtualenvwrapper
 
-pip install pyparsing
-pip install python-dateutil
-
 pip install cython
 pip install Zconfig
 pip install nose
