@@ -5,8 +5,16 @@
 #
 # C. Marquardt, Darmstadt
 #
-# 03 May 2014
+# 07 May 2014
 #
+# Notes:
+#  - nose is not installed centrally as it needs to be
+#    placed into virtual environments, so it's part of
+#    the postmkvirtualenv hook
+#  - same for iPython
+#  - iPython requires (for its notebook functionality)
+#    pyzmq and tornado which can be installed centrally,
+#    so I made them part of this general install script.
 
 # 1. Shell variables
 # ------------------
@@ -30,7 +38,6 @@ pip install virtualenvwrapper
 
 pip install cython
 pip install Zconfig
-pip install nose
 
 pip install -i $EGENIX_URL egenix-mx-base
 
@@ -54,7 +61,13 @@ pip install SQLAlchemy
 pip install Alembic
 pip install sqlitebck
 
-# 7. NetCDF4
+# 7. Support for iPython
+# ----------------------
+
+pip install --install-option="--zmq=bundled" pyzmq
+pip install tornado
+
+# 8. NetCDF4
 # ----------
 
 export USE_NCCONFIG=1
