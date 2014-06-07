@@ -26,17 +26,6 @@ ARGS="--upgrade"
 # 2. Command line arguments
 # -------------------------
 
-NO_ARGS=0 
-E_OPTERROR=85
-
-#if [ $# -eq "$NO_ARGS" ]    # Script invoked with no command-line args?
-#then
-#  echo "Usage: `basename $0` options (-f)"
-#  exit $E_OPTERROR          # Exit and explain usage.
-#                            # Usage: scriptname -options
-#                            # Note: dash (-) necessary
-#fi  
-
 while getopts "fh" Option
 do
   case $Option in
@@ -47,9 +36,6 @@ do
 done
 
 shift $(($OPTIND - 1))
-
-echo "$ARGS"
-exit -1
 
 # 3. Update pip and setuptools
 # ----------------------------
