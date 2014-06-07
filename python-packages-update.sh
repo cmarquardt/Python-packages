@@ -21,55 +21,85 @@
 
 EGENIX_URL=https://downloads.egenix.com/python/index/ucs2
 
-# 2. Update pip and setuptools
+ARGS="--upgrade"
+
+# 2. Command line arguments
+# -------------------------
+
+NO_ARGS=0 
+E_OPTERROR=85
+
+#if [ $# -eq "$NO_ARGS" ]    # Script invoked with no command-line args?
+#then
+#  echo "Usage: `basename $0` options (-f)"
+#  exit $E_OPTERROR          # Exit and explain usage.
+#                            # Usage: scriptname -options
+#                            # Note: dash (-) necessary
+#fi  
+
+while getopts "fh" Option
+do
+  case $Option in
+    f ) ARGS="--upgrade --force-reinstall" ;;
+    h ) echo "Usage: `basename $0` [-f]" ; exit ;;
+    * ) echo "Unknown option...";;   # Default.
+  esac
+done
+
+shift $(($OPTIND - 1))
+
+echo "$ARGS"
+exit -1
+
+# 3. Update pip and setuptools
 # ----------------------------
 
-pip install --upgrade pip
-pip install --upgrade setuptools
+pip install ${ARGS} pip
+pip install ${ARGS} setuptools
 
-# 3. Development tools
+# 4. Development tools
 # --------------------
 
-pip install --upgrade six
-pip install --upgrade stevedore
-pip install --upgrade virtualenv
-pip install --upgrade virtualenv-clone
-pip install --upgrade virtualenvwrapper
+pip install ${ARGS} six
+pip install ${ARGS} stevedore
+pip install ${ARGS} virtualenv
+pip install ${ARGS} virtualenv-clone
+pip install ${ARGS} virtualenvwrapper
 
-pip install --upgrade cython
-pip install --upgrade Zconfig
+pip install ${ARGS} cython
+pip install ${ARGS} Zconfig
 
-pip install --upgrade -i $EGENIX_URL egenix-mx-base
+pip install ${ARGS} -i $EGENIX_URL egenix-mx-base
 
-# 4. Documentation tools
+# 5. Documentation tools
 # ----------------------
 
-pip install --upgrade Sphinx
-pip install --upgrade Cheetah
+pip install ${ARGS} Sphinx
+pip install ${ARGS} Cheetah
 
-# 5. Internet
+# 6. Internet
 # -----------
 
-pip install --upgrade pycurl
-pip install --upgrade ftputil
-pip install --upgrade urlgrabber
+pip install ${ARGS} pycurl
+pip install ${ARGS} ftputil
+pip install ${ARGS} urlgrabber
 
-# 6. Databases
+# 7. Databases
 # ------------
 
-pip install --upgrade SQLAlchemy
-pip install --upgrade Alembic
-pip install --upgrade sqlitebck
+pip install ${ARGS} SQLAlchemy
+pip install ${ARGS} Alembic
+pip install ${ARGS} sqlitebck
 
-# 7. Support for iPython
+# 8. Support for iPython
 # ----------------------
 
-pip install --upgrade --install-option="--zmq=bundled" pyzmq
-pip install --upgrade tornado
+pip install ${ARGS} --install-option="--zmq=bundled" pyzmq
+pip install ${ARGS} tornado
 
-# 8. NetCDF4
+# 9. NetCDF4
 # ----------
 
 export USE_NCCONFIG=1
-pip install --upgrade netCDF4
+pip install ${ARGS} netCDF4
 unset USE_NCCONFIG
