@@ -34,3 +34,8 @@ patch -d `brew --prefix`/lib/python2.7/site-packages/numpy/core << EOF
       def __getitem__(self, indx):
           obj = ndarray.__getitem__(self, indx)
 EOF
+
+# 2 Fix permissions
+# -----------------
+
+chmod u+w `brew --prefix`/lib/python2.7/site-packages/numpy/core/records.py
