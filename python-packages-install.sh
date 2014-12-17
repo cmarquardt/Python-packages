@@ -50,7 +50,10 @@ pip install Cheetah
 # 5. Internet
 # -----------
 
+#export PYCURL_SSL_LIBRARY=openssl
 pip install pycurl
+#unset PYCURL_SSL_LIBRARY
+
 pip install ftputil
 pip install urlgrabber
 
