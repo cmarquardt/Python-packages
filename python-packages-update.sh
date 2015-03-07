@@ -40,8 +40,7 @@ shift $(($OPTIND - 1))
 # 3. Update pip and setuptools
 # ----------------------------
 
-pip install ${ARGS} pip
-pip install ${ARGS} setuptools
+python -m ensurepip ${ARGS}
 
 # 4. Development tools
 # --------------------

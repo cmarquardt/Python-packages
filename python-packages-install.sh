@@ -24,8 +24,8 @@ EGENIX_URL=https://downloads.egenix.com/python/index/ucs2
 # 2. Update pip and setuptools
 # ----------------------------
 
-pip install --upgrade pip
-pip install --upgrade setuptools
+#pip install --upgrade pip
+#pip install --upgrade setuptools
 
 # 3. Development tools
 # --------------------
