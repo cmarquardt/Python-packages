@@ -81,6 +81,9 @@ pip install ${ARGS} sqlitebck
 
 pip install ${ARGS} --install-option="--zmq=bundled" pyzmq
 pip install ${ARGS} tornado
+pip install jsonschema
+pip install ptyprocess
+pip install terminado
 
 # 9. NetCDF4
 # ----------
