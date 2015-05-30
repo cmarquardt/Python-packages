@@ -47,6 +47,8 @@ python -m ensurepip ${ARGS}
 
 pip install ${ARGS} six
 pip install ${ARGS} stevedore
+pip install ${ARGS} pbr
+
 pip install ${ARGS} virtualenv
 pip install ${ARGS} virtualenv-clone
 pip install ${ARGS} virtualenvwrapper
@@ -54,7 +56,11 @@ pip install ${ARGS} virtualenvwrapper
 pip install ${ARGS} cython
 pip install ${ARGS} Zconfig
 
+#pip install ${ARGS} nose
+
 pip install ${ARGS} -i $EGENIX_URL egenix-mx-base
+
+pip install ${ARGS} python-dateutil
 
 # 5. Documentation tools
 # ----------------------
@@ -76,18 +82,22 @@ pip install ${ARGS} SQLAlchemy
 pip install ${ARGS} Alembic
 pip install ${ARGS} sqlitebck
 
-# 8. Support for iPython
-# ----------------------
+# 8. iPython
+# ----------
 
 pip install ${ARGS} --install-option="--zmq=bundled" pyzmq
 pip install ${ARGS} tornado
-pip install jsonschema
-pip install ptyprocess
-pip install terminado
+pip install ${ARGS} jsonschema
+pip install ${ARGS} ptyprocess
+pip install ${ARGS} terminado
+pip install ${ARGS} ipython
 
 # 9. NetCDF4
 # ----------
 
-export USE_NCCONFIG=1
 pip install ${ARGS} netCDF4
-unset USE_NCCONFIG
+
+# 10. Graphics
+# ------------
+
+pip install ${ARGS} Pillow

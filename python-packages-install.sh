@@ -24,14 +24,15 @@ EGENIX_URL=https://downloads.egenix.com/python/index/ucs2
 # 2. Update pip and setuptools
 # ----------------------------
 
-#pip install --upgrade pip
-#pip install --upgrade setuptools
+python -m ensurepip --upgrade #${ARGS}
 
 # 3. Development tools
 # --------------------
 
 pip install six
 pip install stevedore
+pip install pbr
+
 pip install virtualenv
 pip install virtualenv-clone
 pip install virtualenvwrapper
@@ -39,7 +40,11 @@ pip install virtualenvwrapper
 pip install cython
 pip install Zconfig
 
+#pip install nose
+
 pip install -i $EGENIX_URL egenix-mx-base
+
+pip install python-dateutil
 
 # 4. Documentation tools
 # ----------------------
@@ -64,18 +69,22 @@ pip install SQLAlchemy
 pip install Alembic
 pip install sqlitebck
 
-# 7. Support for iPython
-# ----------------------
+# 7. iPython
+# ----------
 
 pip install --install-option="--zmq=bundled" pyzmq
 pip install tornado
 pip install jsonschema
 pip install ptyprocess
 pip install terminado
+pip install ipython
 
 # 8. NetCDF4
 # ----------
 
-export USE_NCCONFIG=1
 pip install netCDF4
-unset USE_NCCONFIG
+
+# 9. Graphics
+# -----------
+
+pip install Pillow
