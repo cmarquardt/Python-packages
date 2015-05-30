@@ -5,13 +5,16 @@
 #
 # C. Marquardt, Darmstadt
 #
-# 07 May 2014
+# 30 May 2015
 #
 # Notes:
 #  - nose is not installed centrally as it needs to be
 #    placed into virtual environments, so it's part of
 #    the postmkvirtualenv hook
-#  - same for iPython
+#  - same used to be true for iPython; it's nowk installed
+#    on an experimental basis;
+#  - numpy, scipy, matplotlib, matplotlib-basemap and
+#    pillow are installed via homebrew;
 #  - iPython requires (for its notebook functionality)
 #    pyzmq and tornado which can be installed centrally,
 #    so I made them part of this general install script.
@@ -55,10 +58,7 @@ pip install Cheetah
 # 5. Internet
 # -----------
 
-#export PYCURL_SSL_LIBRARY=openssl
 pip install pycurl
-#unset PYCURL_SSL_LIBRARY
-
 pip install ftputil
 pip install urlgrabber
 
@@ -87,4 +87,4 @@ pip install netCDF4
 # 9. Graphics
 # -----------
 
-pip install Pillow
+# pip install Pillow
