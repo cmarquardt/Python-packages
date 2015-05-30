@@ -26,7 +26,6 @@ EXTRA_DIST = numpy-patch.sh python-packages-install.sh python-packages-update.sh
 
 install-packages:
 	$(SHELL) python-packages-install.sh
-	$(SHELL) numpy-patch.sh
 
 # 6. Build update script
 # ----------------------
