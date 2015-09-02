@@ -22,8 +22,6 @@
 # 1. Shell variables
 # ------------------
 
-EGENIX_URL=https://downloads.egenix.com/python/index/ucs2
-
 ARGS="--upgrade"
 
 # 2. Command line arguments
@@ -61,7 +59,7 @@ pip install ${ARGS} Zconfig
 
 #pip install ${ARGS} nose
 
-pip install ${ARGS} -i $EGENIX_URL egenix-mx-base
+pip install ${ARGS} egenix-mx-base
 
 pip install ${ARGS} python-dateutil
 
@@ -93,7 +91,7 @@ pip install ${ARGS} tornado
 pip install ${ARGS} jsonschema
 pip install ${ARGS} ptyprocess
 pip install ${ARGS} terminado
-pip install ${ARGS} ipython
+pip install ${ARGS} ipython[all]
 
 # 9. NetCDF4
 # ----------

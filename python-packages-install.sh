@@ -22,8 +22,6 @@
 # 1. Shell variables
 # ------------------
 
-EGENIX_URL=https://downloads.egenix.com/python/index/ucs2
-
 # 2. Update pip and setuptools
 # ----------------------------
 
@@ -45,7 +43,7 @@ pip install Zconfig
 
 #pip install nose
 
-pip install -i $EGENIX_URL egenix-mx-base
+pip install egenix-mx-base
 
 pip install python-dateutil
 
@@ -77,7 +75,7 @@ pip install tornado
 pip install jsonschema
 pip install ptyprocess
 pip install terminado
-pip install ipython
+pip install ipython[all]
 
 # 8. NetCDF4
 # ----------
