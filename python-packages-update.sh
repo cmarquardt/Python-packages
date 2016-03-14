@@ -23,6 +23,7 @@
 # ------------------
 
 ARGS="--upgrade"
+PREFIX=`brew --prefix`
 
 # 2. Command line arguments
 # -------------------------
@@ -98,7 +99,12 @@ pip install ${ARGS} ipython[all]
 
 pip install ${ARGS} netCDF4
 
-# 10. Graphics
+# 10. Numerical libraries
+# -----------------------
+
+CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install ${ARGS} pyfftw
+
+# 11. Graphics
 # ------------
 
 #pip install ${ARGS} Pillow

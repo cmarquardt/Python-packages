@@ -5,7 +5,7 @@
 #
 # C. Marquardt, Darmstadt
 #
-# 30 May 2015
+# 314 March 2016
 #
 # Notes:
 #  - nose is not installed centrally as it needs to be
@@ -21,6 +21,8 @@
 
 # 1. Shell variables
 # ------------------
+
+PREFIX=`brew --prefix`
 
 # 2. Update pip and setuptools
 # ----------------------------
@@ -82,7 +84,12 @@ pip install ipython[all]
 
 pip install netCDF4
 
-# 9. Graphics
-# -----------
+# 9. Numerical libraries
+# ----------------------
+
+CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install pyfftw
+
+# 10. Graphics
+# ------------
 
 # pip install Pillow
