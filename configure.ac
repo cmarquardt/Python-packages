@@ -4,7 +4,7 @@
 # 1. Initialisation
 # -----------------
 
-AC_INIT(Python-packages, 1.1, christian@marquardt.sc)
+AC_INIT(Python-packages, 1.2, christian@marquardt.sc)
 AC_CONFIG_SRCDIR(python-packages-update.sh)
 
 AM_INIT_AUTOMAKE(foreign)

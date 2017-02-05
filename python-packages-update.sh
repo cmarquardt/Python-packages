@@ -22,7 +22,7 @@
 # 1. Shell variables
 # ------------------
 
-ARGS="--upgrade"
+ARGS="--upgrade --upgrade-strategy only-if-needed"
 PREFIX=`brew --prefix`
 
 # 2. Command line arguments
@@ -31,7 +31,7 @@ PREFIX=`brew --prefix`
 while getopts "fh" Option
 do
   case $Option in
-    f ) ARGS="--upgrade --force-reinstall" ;;
+    f ) ARGS="--upgrade --upgrade-strategy only-if-needed --force-reinstall" ;;
     h ) echo "Usage: `basename $0` [-f]" ; exit ;;
     * ) echo "Unknown option...";;   # Default.
   esac
@@ -83,6 +83,10 @@ pip install ${ARGS} urlgrabber
 pip install ${ARGS} SQLAlchemy
 pip install ${ARGS} Alembic
 pip install ${ARGS} sqlitebck
+
+if [ "x$ORACLE_HOME" != "x" ]; then
+    FORCE_RPATH=yes pip install ${ARGS} --no-binary :all: cx_Oracle
+fi
 
 # 8. iPython
 # ----------

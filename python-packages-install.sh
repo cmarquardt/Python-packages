@@ -69,6 +69,10 @@ pip install SQLAlchemy
 pip install Alembic
 pip install sqlitebck
 
+if [ "x$ORACLE_HOME" != "x" ]; then
+    FORCE_RPATH=yes pip install --no-binary :all: cx_Oracle
+fi
+
 # 7. iPython
 # ----------
 
