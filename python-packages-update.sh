@@ -42,7 +42,7 @@ shift $(($OPTIND - 1))
 # 3. Update pip and setuptools
 # ----------------------------
 
-python -m ensurepip ${ARGS}
+python -m ensurepip --upgrade
 
 # 4. Development tools
 # --------------------
@@ -96,7 +96,7 @@ pip install ${ARGS} tornado
 pip install ${ARGS} jsonschema
 pip install ${ARGS} ptyprocess
 pip install ${ARGS} terminado
-pip install ${ARGS} ipython[all]
+pip install ${ARGS} jupyter[all]
 
 # 9. NetCDF4
 # ----------
@@ -110,5 +110,7 @@ CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install ${ARGS} pyf
 
 # 11. Graphics
 # ------------
+
+pip install ${ARGS} cartopy
 
 #pip install ${ARGS} Pillow

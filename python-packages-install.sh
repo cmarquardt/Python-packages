@@ -27,7 +27,7 @@ PREFIX=`brew --prefix`
 # 2. Update pip and setuptools
 # ----------------------------
 
-python -m ensurepip --upgrade #${ARGS}
+python -m ensurepip --upgrade
 
 # 3. Development tools
 # --------------------
@@ -81,7 +81,7 @@ pip install tornado
 pip install jsonschema
 pip install ptyprocess
 pip install terminado
-pip install ipython[all]
+pip install jupyter[all]
 
 # 8. NetCDF4
 # ----------
@@ -95,5 +95,7 @@ CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install pyfftw
 
 # 10. Graphics
 # ------------
+
+pip install cartopy
 
 # pip install Pillow
