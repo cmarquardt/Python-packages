@@ -98,9 +98,10 @@ pip install ${ARGS} ptyprocess
 pip install ${ARGS} terminado
 pip install ${ARGS} jupyter[all]
 
-# 9. NetCDF4
-# ----------
+# 9. HDF5, NetCDF4
+# ----------------
 
+pip install ${ARGS} h5py
 pip install ${ARGS} netCDF4
 
 # 10. Numerical libraries
