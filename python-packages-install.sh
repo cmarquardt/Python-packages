@@ -92,11 +92,14 @@ pip install netCDF4
 # 9. Numerical libraries
 # ----------------------
 
+pip install pandas
 CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install pyfftw
 
 # 10. Graphics
 # ------------
 
 pip install cartopy
+pip install seaborn
+pip install ggplot
 
 # pip install Pillow

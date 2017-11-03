@@ -1,8 +1,8 @@
 Python-packages
 ===============
 
-This packages provides a convenient way (for me!) to install and update 
-packages for Python. It contains a hardcoded list of python packages 
+This packages provides a convenient way (for me!) to install and update
+packages for Python. It contains a hardcoded list of python packages
 that I use; changes in that list will cause a version bump.
 
 Installation
@@ -14,19 +14,19 @@ Installation proceeds as usual with
     make
     make install
 
-and installs a single script 
+and installs a single script
 
     python-packages-update
-    
-which - if run from the shell command line - will update the previously 
+
+which - if run from the shell command line - will update the previously
 installed python packages. The script is intended to perform regular
 updates of installed python packages.
 
 A second make target,
 
     make install-packages
-    
-will install a hard-coded list of python packages; for details, see the 
+
+will install a hard-coded list of python packages; for details, see the
 list of packages to be installed in python-packages-install.sh
 
 Caveats

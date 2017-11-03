@@ -107,11 +107,14 @@ pip install ${ARGS} netCDF4
 # 10. Numerical libraries
 # -----------------------
 
+pip install ${ARGS} pandas
 CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install ${ARGS} pyfftw
 
 # 11. Graphics
 # ------------
 
 pip install ${ARGS} cartopy
+pip install ${ARGS} seaborn
+pip install ${ARGS} ggplot
 
 #pip install ${ARGS} Pillow
