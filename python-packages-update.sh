@@ -13,8 +13,11 @@
 #    the postmkvirtualenv hook;
 #  - same used to be true for iPython; it's nowk installed
 #    on an experimental basis;
-#  - numpy, scipy, matplotlib, matplotlib-basemap and
-#    pillow are installed via homebrew;
+#  - numpy and scipy are installed via homebrew;
+#  - pandas, pillow, matplotlib, matplotlib-basemap, cartopy,
+#    seaborn and ggplot are installed via pip;
+#  - the version for matplotlib-basemap is currently hardcoded
+#    as the script needs to fetch the released file from github;
 #  - iPython requires (for its notebook functionality)
 #    pyzmq and tornado which can be installed centrally,
 #    so I made them part of this general update script.
@@ -61,7 +64,6 @@ pip install ${ARGS} Zconfig
 #pip install ${ARGS} nose
 
 pip install ${ARGS} egenix-mx-base
-
 pip install ${ARGS} python-dateutil
 
 # 5. Documentation tools
@@ -88,6 +90,27 @@ if [ "x$ORACLE_HOME" != "x" ]; then
     FORCE_RPATH=yes pip install ${ARGS} --no-binary :all: cx_Oracle
 fi
 
+# 8. HDF5, NetCDF4
+# ----------------
+
+pip install ${ARGS} h5py
+pip install ${ARGS} netCDF4
+
+# 9. Graphics and numerial libraries
+# ----------------------------------
+
+pip install ${ARGS} pandas
+CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install ${ARGS} pyfftw
+
+pip install ${ARGS} pillow
+pip install ${ARGS} matplotlib
+pip install ${ARGS} cartopy
+pip install ${ARGS} seaborn
+pip install ${ARGS} ggplot
+
+GEOS_DIR=`brew --prefix geos` pip install ${ARGS} https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz
+
+
 # 8. iPython
 # ----------
 
@@ -97,24 +120,3 @@ pip install ${ARGS} jsonschema
 pip install ${ARGS} ptyprocess
 pip install ${ARGS} terminado
 pip install ${ARGS} jupyter[all]
-
-# 9. HDF5, NetCDF4
-# ----------------
-
-pip install ${ARGS} h5py
-pip install ${ARGS} netCDF4
-
-# 10. Numerical libraries
-# -----------------------
-
-pip install ${ARGS} pandas
-CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install ${ARGS} pyfftw
-
-# 11. Graphics
-# ------------
-
-pip install ${ARGS} cartopy
-pip install ${ARGS} seaborn
-pip install ${ARGS} ggplot
-
-#pip install ${ARGS} Pillow

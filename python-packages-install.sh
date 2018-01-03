@@ -13,8 +13,11 @@
 #    the postmkvirtualenv hook
 #  - same used to be true for iPython; it's nowk installed
 #    on an experimental basis;
-#  - numpy, scipy, matplotlib, matplotlib-basemap and
-#    pillow are installed via homebrew;
+#  - numpy and scipy are installed via homebrew;
+#  - pandas, pillow, matplotlib, matplotlib-basemap, cartopy,
+#    seaborn and ggplot are installed via pip;
+#  - the version for matplotlib-basemap is currently hardcoded
+#    as the script needs to fetch the released file from github;
 #  - iPython requires (for its notebook functionality)
 #    pyzmq and tornado which can be installed centrally,
 #    so I made them part of this general install script.
@@ -46,7 +49,6 @@ pip install Zconfig
 #pip install nose
 
 pip install egenix-mx-base
-
 pip install python-dateutil
 
 # 4. Documentation tools
@@ -73,7 +75,27 @@ if [ "x$ORACLE_HOME" != "x" ]; then
     FORCE_RPATH=yes pip install --no-binary :all: cx_Oracle
 fi
 
-# 7. iPython
+# 7. HDF5, NetCDF4
+# ----------------
+
+pip install h5py
+pip install netCDF4
+
+# 8. Graphics and numerial libraries
+# ----------------------------------
+
+pip install pandas
+CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install pyfftw
+
+pip install pillow
+pip install matplotlib
+pip install cartopy
+pip install seaborn
+pip install ggplot
+
+GEOS_DIR=`brew --prefix geos` pip install https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz
+
+# 9. iPython
 # ----------
 
 pip install --install-option="--zmq=bundled" pyzmq
@@ -82,24 +104,3 @@ pip install jsonschema
 pip install ptyprocess
 pip install terminado
 pip install jupyter[all]
-
-# 8. HDF5, NetCDF4
-# ----------------
-
-pip install h5py
-pip install netCDF4
-
-# 9. Numerical libraries
-# ----------------------
-
-pip install pandas
-CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install pyfftw
-
-# 10. Graphics
-# ------------
-
-pip install cartopy
-pip install seaborn
-pip install ggplot
-
-# pip install Pillow
