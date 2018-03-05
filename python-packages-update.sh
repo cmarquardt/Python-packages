@@ -61,6 +61,9 @@ pip install ${ARGS} virtualenvwrapper
 pip install ${ARGS} cython
 pip install ${ARGS} Zconfig
 
+pip install ${ARGS} pytest
+pip install ${ARGS} pytest-runner
+
 #pip install ${ARGS} nose
 
 pip install ${ARGS} egenix-mx-base

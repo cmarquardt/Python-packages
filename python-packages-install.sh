@@ -46,6 +46,9 @@ pip install virtualenvwrapper
 pip install cython
 pip install Zconfig
 
+pip install pytest
+pip install pytest-runner
+
 #pip install nose
 
 pip install egenix-mx-base
