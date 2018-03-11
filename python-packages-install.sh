@@ -5,14 +5,9 @@
 #
 # C. Marquardt, Darmstadt
 #
-# 314 March 2016
+# 11 March 2018
 #
 # Notes:
-#  - nose is not installed centrally as it needs to be
-#    placed into virtual environments, so it's part of
-#    the postmkvirtualenv hook
-#  - same used to be true for iPython; it's nowk installed
-#    on an experimental basis;
 #  - numpy and scipy are installed via homebrew;
 #  - pandas, pillow, matplotlib, matplotlib-basemap, cartopy,
 #    seaborn and ggplot are installed via pip;
@@ -47,12 +42,18 @@ pip install cython
 pip install Zconfig
 
 pip install pytest
+pip install pytest-cov
+pip install pytest-html
+pip install pytest-mock
 pip install pytest-runner
+pip install pytest-xdist
 
-#pip install nose
+pip install tox
 
 pip install egenix-mx-base
 pip install python-dateutil
+
+pip install cookiecutter
 
 # 4. Documentation tools
 # ----------------------
