@@ -94,15 +94,10 @@ if [ "x$ORACLE_HOME" != "x" ]; then
     FORCE_RPATH=yes pip install ${ARGS} --no-binary :all: cx_Oracle
 fi
 
-# 8. HDF5, NetCDF4
-# ----------------
+# 8. Numerical and graphics libraries
+# -----------------------------------
 
-pip install ${ARGS} h5py
-pip install ${ARGS} netCDF4
-
-# 9. Graphics and numerial libraries
-# ----------------------------------
-
+pip install ${ARGS} scipy
 pip install ${ARGS} pandas
 CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install ${ARGS} pyfftw
 
@@ -114,9 +109,14 @@ pip install ${ARGS} ggplot
 
 GEOS_DIR=`brew --prefix geos` pip install ${ARGS} https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz
 
+# 9. HDF5, NetCDF4
+# ----------------
 
-# 8. iPython
-# ----------
+pip install ${ARGS} h5py
+pip install ${ARGS} netCDF4
+
+# 10. iPython
+# -----------
 
 pip install ${ARGS} --install-option="--zmq=bundled" pyzmq
 pip install ${ARGS} tornado
