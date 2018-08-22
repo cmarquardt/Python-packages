@@ -41,6 +41,9 @@ pip install virtualenvwrapper
 pip install cython
 pip install Zconfig
 
+pip install line_profiler
+pip install git+https://github.com/mgaitan/fortran_magic
+
 pip install pytest
 pip install pytest-cov
 pip install pytest-html

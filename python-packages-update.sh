@@ -70,6 +70,9 @@ pip install ${ARGS} python-dateutil
 
 pip install ${ARGS} cookiecutter
 
+pip install ${ARGS} line_profiler
+pip install ${ARGS} git+https://github.com/mgaitan/fortran_magic
+
 # 5. Documentation tools
 # ----------------------
 
