@@ -48,6 +48,7 @@ python -m ensurepip --upgrade
 pip install ${ARGS} six
 pip install ${ARGS} stevedore
 pip install ${ARGS} pbr
+pip install ${ARGS} colorlog
 
 pip install ${ARGS} virtualenv
 pip install ${ARGS} virtualenv-clone
@@ -55,6 +56,10 @@ pip install ${ARGS} virtualenvwrapper
 
 pip install ${ARGS} cython
 pip install ${ARGS} Zconfig
+
+pip install ${ARGS} pythran
+pip install ${ARGS} line_profiler
+pip install ${ARGS} git+https://github.com/mgaitan/fortran_magic
 
 pip install ${ARGS} pytest
 pip install ${ARGS} pytest-cov
@@ -70,9 +75,6 @@ pip install ${ARGS} python-dateutil
 
 pip install ${ARGS} cookiecutter
 
-pip install ${ARGS} line_profiler
-pip install ${ARGS} git+https://github.com/mgaitan/fortran_magic
-
 # 5. Documentation tools
 # ----------------------
 
@@ -81,6 +83,10 @@ pip install ${ARGS} Cheetah
 
 # 6. Internet
 # -----------
+
+PYCURL_CURL_CONFIG=`brew --prefix`/opt/curl/bin/curl-config \
+PYCURL_SSL_LIBRARY=openssl \
+  pip install ${ARGS} pycurl
 
 pip install ${ARGS} pycurl
 pip install ${ARGS} ftputil

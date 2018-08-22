@@ -33,6 +33,7 @@ python -m ensurepip --upgrade
 pip install six
 pip install stevedore
 pip install pbr
+pip install colorlog
 
 pip install virtualenv
 pip install virtualenv-clone
@@ -41,6 +42,7 @@ pip install virtualenvwrapper
 pip install cython
 pip install Zconfig
 
+pip install pythran
 pip install line_profiler
 pip install git+https://github.com/mgaitan/fortran_magic
 
@@ -67,7 +69,10 @@ pip install Cheetah
 # 5. Internet
 # -----------
 
-pip install pycurl
+PYCURL_CURL_CONFIG=`brew --prefix`/opt/curl/bin/curl-config \
+PYCURL_SSL_LIBRARY=openssl \
+  pip install pycurl
+
 pip install ftputil
 pip install urlgrabber
 
