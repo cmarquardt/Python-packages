@@ -45,6 +45,7 @@ python -m ensurepip --upgrade
 # 4. Development tools
 # --------------------
 
+pip install ${ARGS} pipdate
 pip install ${ARGS} six
 pip install ${ARGS} stevedore
 pip install ${ARGS} pbr

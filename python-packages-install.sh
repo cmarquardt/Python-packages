@@ -30,6 +30,7 @@ python -m ensurepip --upgrade
 # 3. Development tools
 # --------------------
 
+pip install pipdate
 pip install six
 pip install stevedore
 pip install pbr
