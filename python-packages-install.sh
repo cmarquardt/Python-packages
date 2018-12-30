@@ -90,7 +90,6 @@ fi
 # 7. Numerical and graphics libraries
 # -----------------------------------
 
-pip install scipy
 pip install pandas
 CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" pip install pyfftw
 
