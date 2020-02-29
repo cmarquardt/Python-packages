@@ -9,7 +9,7 @@ SUFFIXES = .sh
 # 2. Scripts to be installed
 # --------------------------
 
-bin_SCRIPTS = python-packages-update notebook
+bin_SCRIPTS = jupyterlab notebook
 
 # 3. Files to be cleaned
 # ----------------------
@@ -19,19 +19,19 @@ CLEANFILES = $(bin_SCRIPTS)
 # 4. Files to be distributed
 # --------------------------
 
-EXTRA_DIST = python-packages-install.sh python-packages-update.sh notebook.sh
+EXTRA_DIST = jupyterlab.sh notebook.sh
 
-# 5. Install R packages
-# ---------------------
+# 5. Install Python packages
+# --------------------------
 
 install-packages:
-	$(SHELL) python-packages-install.sh
+	$(SHELL) install-packages.sh
 
-# 6. Build update script
-# ----------------------
+# 6. Build jupyterlab script
+# --------------------------
 
-python-packages-update:
-	cp python-packages-update.sh $@
+jupyterlab:
+	cp jupyterlab.sh $@
 	chmod a+x $@
 
 # 7. Build notebook script

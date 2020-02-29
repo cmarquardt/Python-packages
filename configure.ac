@@ -4,8 +4,8 @@
 # 1. Initialisation
 # -----------------
 
-AC_INIT(Python-packages, 1.12, christian@marquardt.sc)
-AC_CONFIG_SRCDIR(python-packages-update.sh)
+AC_INIT(Python-packages, 2.0, christian@marquardt.sc)
+AC_CONFIG_SRCDIR(jupyterlab.sh)
 
 AM_INIT_AUTOMAKE(foreign)
 
