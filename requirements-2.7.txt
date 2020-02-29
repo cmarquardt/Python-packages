@@ -15,7 +15,7 @@ backports.shutil-get-terminal-size==1.0.0
 backports.ssl-match-hostname==3.7.0.1
 beniget==0.2.0
 binaryornot==0.4.4
-bleach==3.1.0
+bleach==3.1.1
 bokeh==1.4.0
 brewer2mpl==1.4.1
 Cartopy==0.17.0
