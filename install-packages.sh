@@ -10,7 +10,11 @@
 # Notes for Python 2.7:
 # ---------------------
 #  - all version numbers are considered to be frozen;
-#  - virtualenv, virtualenvwrapper and friends are installed for Python 3 only;
+#  - virtualenv, virtualenvwrapper and friends are installed for for both
+#    Python 2 and Python 3 as they rae used when virtual environments are
+#    build for the respective python; however, the Python 2 version is 
+#    later on as that makes the installed executable/shell script to install
+#    Python 2 virtual environments by default;
 #  - numpy and scipy are installed via pip, not brew (which doesn't support 
 #    Python 2 any more);
 #  - some special cases are treated outside of the requirements file below
@@ -25,18 +29,33 @@
 
 HOMEBREW_PREFIX=`brew --prefix`
 
-# 2. Python 2.7
+# 2. Python 3.7
 # -------------
 
 # 2.1 Update pip and setuptools
 
-python2 -m ensurepip --upgrade
+python3 -m ensurepip --upgrade
 
 # 2.2 Core packages
 
-pip2 install -r requirements-2.7.txt
+pip3 install -r requirements-3.7.txt
 
 # 2.3 Special cases
+
+# None so far...
+
+# 3. Python 2.7
+# -------------
+
+# 3.1 Update pip and setuptools
+
+python2 -m ensurepip --upgrade
+
+# 3.2 Core packages
+
+pip2 install -r requirements-2.7.txt
+
+# 3.3 Special cases
 
 # urlgrabber requires pycurl, which has special needs for installation
 
@@ -54,16 +73,3 @@ GEOS_DIR=`brew --prefix geos` \
 if [ "x$ORACLE_HOME" != "x" ]; then
     FORCE_RPATH=yes pip2 install --no-binary :all: cx_Oracle==7.3.0
 fi
-
-# 3. Python 3.7
-# -------------
-
-# 2.1 Update pip and setuptools
-
-python3 -m ensurepip --upgrade
-
-# 3.2 Core packages
-
-pip3 install -r requirements-3.7.txt
-
-# 3.3 Special cases
