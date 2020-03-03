@@ -21,20 +21,14 @@ CLEANFILES = $(bin_SCRIPTS)
 
 EXTRA_DIST = jupyterlab.sh notebook.sh
 
-# 5. Install Python packages
-# --------------------------
-
-install-packages:
-	$(SHELL) install-packages.sh
-
-# 6. Build jupyterlab script
+# 5. Build jupyterlab script
 # --------------------------
 
 jupyterlab:
 	cp jupyterlab.sh $@
 	chmod a+x $@
 
-# 7. Build notebook script
+# 6. Build notebook script
 # ------------------------
 
 notebook:

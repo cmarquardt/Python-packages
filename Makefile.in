@@ -641,20 +641,14 @@ uninstall-am: uninstall-binSCRIPTS
 .PRECIOUS: Makefile
 
 
-# 5. Install Python packages
-# --------------------------
-
-install-packages:
-	$(SHELL) install-packages.sh
-
-# 6. Build jupyterlab script
+# 5. Build jupyterlab script
 # --------------------------
 
 jupyterlab:
 	cp jupyterlab.sh $@
 	chmod a+x $@
 
-# 7. Build notebook script
+# 6. Build notebook script
 # ------------------------
 
 notebook:
